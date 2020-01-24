@@ -102,8 +102,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="folder.badge.plus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="2Wm-rk-55w">
-                                                    <rect key="frame" x="0.0" y="11" width="414" height="188"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="folder.badge.plus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="2Wm-rk-55w">
+                                                    <rect key="frame" x="0.0" y="-8" width="414" height="207"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -214,6 +214,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Сохранить" id="kEx-I3-W70"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="imageOfPlace" destination="2Wm-rk-55w" id="Pae-yP-Xqn"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zkq-xm-NLb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="zYT-UJ-ndz" userLabel="Exit" sceneMemberID="exit"/>
