@@ -10,13 +10,8 @@ import UIKit
 
 class MainViewController: UITableViewController {
     
-//    let restaurantNames = [
-//        "Burger Heroes", "Kitchen", "Bonsai", "Дастархан",
-//        "Индокитай", "X.O", "Балкан Гриль", "Sherlock Holmes",
-//        "Speak Easy", "Morris Pub", "Вкусные истории",
-//        "Классик", "Love&Life", "Шок", "Бочка"
-//    ]
-    let places = Place.getPlaces() 
+
+    var places = Place.getPlaces()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,12 +28,20 @@ class MainViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
+        let place = places[indexPath.row] //ссылка на массив
         
-        cell.nameLabel.text = places[indexPath.row].name
-        cell.locationLabel.text = places[indexPath.row].location
-        cell.typeLabel.text = places[indexPath.row].type
+        cell.nameLabel.text = place.name
+        cell.locationLabel.text = place.location
+        cell.typeLabel.text = place.type
         
-        cell.imageOfPlaces.image = UIImage(named: places[indexPath.row].image)
+        
+        if place.image == nil {
+             
+        cell.imageOfPlaces.image = UIImage(named: place.restarauntImage!)
+        } else {
+            cell.imageOfPlaces.image = place.image
+        }
+        
         cell.imageOfPlaces.layer.cornerRadius = cell.imageOfPlaces.frame.size.height / 2
         cell.imageOfPlaces.clipsToBounds = true
         
@@ -50,6 +53,11 @@ class MainViewController: UITableViewController {
     
     
 
-    @IBAction func cancelAction(_ segue: UIStoryboardSegue) {}
-
+    @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {
+        guard let newPLaceVC = segue.source as? NewPlaceViewController else {return}
+        newPLaceVC.saveNewPlace()
+        places.append(newPLaceVC.newPlace!)
+        tableView.reloadData()
+    }
+    
 }

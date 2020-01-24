@@ -10,11 +10,18 @@ import UIKit
 
 class NewPlaceViewController: UITableViewController {
 
-    @IBOutlet var imageOfPlace: UIImageView!
+    var newPlace: Place?
+    var imageIsChanged = false
+    @IBOutlet var placeImage: UIImageView!
+    @IBOutlet var saveButton: UIBarButtonItem!
+    @IBOutlet var placeName: UITextField!
+    @IBOutlet var placeLocation: UITextField!
+    @IBOutlet var placeType: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
-
+        saveButton.isEnabled = false
+        placeName.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)//при редактировании поля срабатывает и вызывает textFieldChanged
     }
     
     //MARK: Table View delegate
@@ -46,6 +53,9 @@ class NewPlaceViewController: UITableViewController {
             view.endEditing(true)//скрываем клавиатуру
         }
     }
+    @IBAction func cancelAction(_ sender: UIBarButtonItem) {
+        dismiss(animated: true)
+    }
 }
     // MARK: Text field delegate
     extension NewPlaceViewController: UITextFieldDelegate {
@@ -54,7 +64,22 @@ class NewPlaceViewController: UITableViewController {
             textField.resignFirstResponder()
             return true
         }
-        
+        @objc private func textFieldChanged() { //проверяем заполненность поля name
+            if placeName.text?.isEmpty == false {
+                saveButton.isEnabled = true
+            } else {
+                saveButton.isEnabled = false
+            }
+        }
+        func saveNewPlace() {
+            var image: UIImage?
+            if imageIsChanged {
+                image = placeImage.image
+            } else {
+                image = #imageLiteral(resourceName: "imagePlaceholder")
+            }
+            newPlace = Place(name: placeName.text!, location: placeLocation.text, type: placeType.text, restarauntImage: nil, image: image)
+        }
     }
 //MARK: Work With Image
 extension NewPlaceViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -73,9 +98,12 @@ extension NewPlaceViewController: UIImagePickerControllerDelegate, UINavigationC
     func imagePickerController(_ picker: UIImagePickerController,//добавляем изображение
                                didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        imageOfPlace.image = info[.editedImage] as? UIImage
-        imageOfPlace.contentMode = .scaleAspectFill
-        imageOfPlace.clipsToBounds = true
+        placeImage.image = info[.editedImage] as? UIImage
+        placeImage.contentMode = .scaleAspectFill
+        placeImage.clipsToBounds = true
+        
+        imageIsChanged = true
+        
         dismiss(animated: true)
     }
 }
