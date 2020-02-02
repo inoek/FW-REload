@@ -10,8 +10,9 @@ import UIKit
 
 class NewPlaceViewController: UITableViewController {
 
-    var newPlace: Place?
-    var imageIsChanged = false
+        var imageIsChanged = false
+    
+    
     @IBOutlet var placeImage: UIImageView!
     @IBOutlet var saveButton: UIBarButtonItem!
     @IBOutlet var placeName: UITextField!
@@ -22,6 +23,13 @@ class NewPlaceViewController: UITableViewController {
         tableView.tableFooterView = UIView()
         saveButton.isEnabled = false
         placeName.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)//при редактировании поля срабатывает и вызывает textFieldChanged
+        
+        
+//        DispatchQueue.main.async {
+//            self.newPlace.savePlaces()
+//        }
+        
+        
     }
     
     //MARK: Table View delegate
@@ -72,13 +80,22 @@ class NewPlaceViewController: UITableViewController {
             }
         }
         func saveNewPlace() {
+            
+            
             var image: UIImage?
             if imageIsChanged {
                 image = placeImage.image
             } else {
                 image = #imageLiteral(resourceName: "imagePlaceholder")
             }
-            newPlace = Place(name: placeName.text!, location: placeLocation.text, type: placeType.text, restarauntImage: nil, image: image)
+            let imageData = image?.pngData()//конвентируем image to imageData
+            
+            let newPLace = Place(name: placeName.text!,
+                                 location: placeLocation.text,
+                                 type: placeType.text,
+                                 imageData: imageData)
+            StorageManager.saveObject(newPLace)
+            
         }
     }
 //MARK: Work With Image
