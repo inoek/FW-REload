@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,24 +16,9 @@
 		D93F6E6123D9CE2900E4071E /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93F6E6023D9CE2900E4071E /* CustomTableViewCell.swift */; };
 		D93F6E6323D9DCE600E4071E /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93F6E6223D9DCE600E4071E /* PlaceModel.swift */; };
 		D975C28523DAE8AA0069D625 /* NewPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D975C28423DAE8AA0069D625 /* NewPlaceViewController.swift */; };
-		D9837B8423E7010200EFC4F3 /* Pods_Favorite_Places.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E8928D8CC44DDFC1EA2D1D7 /* Pods_Favorite_Places.framework */; };
-		D9837B8523E7010200EFC4F3 /* Pods_Favorite_Places.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5E8928D8CC44DDFC1EA2D1D7 /* Pods_Favorite_Places.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D985637823E6241500E35D00 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D985637723E6241500E35D00 /* StorageManager.swift */; };
+		F68411AE914476AD027386A3 /* libPods-Favorite Places.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E5A8FD2D48138EFD8A3E756B /* libPods-Favorite Places.a */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		D9837B8623E7010200EFC4F3 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				D9837B8523E7010200EFC4F3 /* Pods_Favorite_Places.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0217EDC49DE68457B7E8CAA4 /* Pods-Favorite Places.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Favorite Places.debug.xcconfig"; path = "Target Support Files/Pods-Favorite Places/Pods-Favorite Places.debug.xcconfig"; sourceTree = "<group>"; };
@@ -50,6 +35,7 @@
 		D93F6E6223D9DCE600E4071E /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 		D975C28423DAE8AA0069D625 /* NewPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceViewController.swift; sourceTree = "<group>"; };
 		D985637723E6241500E35D00 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		E5A8FD2D48138EFD8A3E756B /* libPods-Favorite Places.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Favorite Places.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC5DB6FF61A5AC57A8EAD665 /* Pods-Favorite Places.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Favorite Places.release.xcconfig"; path = "Target Support Files/Pods-Favorite Places/Pods-Favorite Places.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,7 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9837B8423E7010200EFC4F3 /* Pods_Favorite_Places.framework in Frameworks */,
+				F68411AE914476AD027386A3 /* libPods-Favorite Places.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,7 +63,7 @@
 		A08EDA44D7EF501F9E277005 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5E8928D8CC44DDFC1EA2D1D7 /* Pods_Favorite_Places.framework */,
+				E5A8FD2D48138EFD8A3E756B /* libPods-Favorite Places.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -118,6 +104,7 @@
 				D93F6E4423D9B59D00E4071E /* Products */,
 				0D6FDF275037B4F983D82026 /* Pods */,
 				A08EDA44D7EF501F9E277005 /* Frameworks */,
+				E557287123E9CDB700673856 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -150,6 +137,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		E557287123E9CDB700673856 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				5E8928D8CC44DDFC1EA2D1D7 /* Pods_Favorite_Places.framework */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -161,8 +156,6 @@
 				D93F6E3F23D9B59D00E4071E /* Sources */,
 				D93F6E4023D9B59D00E4071E /* Frameworks */,
 				D93F6E4123D9B59D00E4071E /* Resources */,
-				EBA86774C8C9ED78A01D5962 /* [CP] Embed Pods Frameworks */,
-				D9837B8623E7010200EFC4F3 /* Embed Frameworks */,
 				D9837B8723E702B800EFC4F3 /* ShellScript */,
 			);
 			buildRules = (
@@ -261,23 +254,6 @@
 			shellScript = "
 
 ";
-		};
-		EBA86774C8C9ED78A01D5962 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Favorite Places/Pods-Favorite Places-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Favorite Places/Pods-Favorite Places-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Favorite Places/Pods-Favorite Places-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
