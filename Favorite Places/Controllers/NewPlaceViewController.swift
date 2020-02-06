@@ -13,11 +13,16 @@ class NewPlaceViewController: UITableViewController {
     var imageIsChanged = false
     var currentPlace: Place?
     
+
+    
     @IBOutlet var placeImage: UIImageView!
-    @IBOutlet var saveButton: UIBarButtonItem!
+    
     @IBOutlet var placeName: UITextField!
+    
     @IBOutlet var placeLocation: UITextField!
+    
     @IBOutlet var placeType: UITextField!
+    @IBOutlet var saveButton: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
