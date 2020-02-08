@@ -121,6 +121,28 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="140" id="wnk-Zx-eoF">
+                                        <rect key="frame" x="0.0" y="533" width="414" height="140"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wnk-Zx-eoF" id="Lah-ds-SM5">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sqM-E6-7Ke" customClass="RatingControl" customModule="Favorite_Places" customModuleProvider="target">
+                                                    <rect key="frame" x="77" y="48" width="260" height="44"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="starCount">
+                                                            <integer key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="sqM-E6-7Ke" firstAttribute="centerY" secondItem="Lah-ds-SM5" secondAttribute="centerY" id="5sO-rD-9ud"/>
+                                                <constraint firstItem="sqM-E6-7Ke" firstAttribute="centerX" secondItem="Lah-ds-SM5" secondAttribute="centerX" id="m8l-Ze-kES"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -146,6 +168,7 @@
                         <outlet property="placeLocation" destination="L3R-vg-hA6" id="6Vv-qG-Q7b"/>
                         <outlet property="placeName" destination="abH-o7-fEA" id="9gc-3P-XAj"/>
                         <outlet property="placeType" destination="UE9-YF-jlF" id="n2k-Ii-6WK"/>
+                        <outlet property="ratingControl" destination="sqM-E6-7Ke" id="tub-Rt-6j5"/>
                         <outlet property="saveButton" destination="kEx-I3-W70" id="TkR-61-OtY"/>
                     </connections>
                 </tableViewController>
@@ -179,7 +202,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QDh-cX-TP0">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <segmentedControl key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="o6D-RV-TXv">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="32"/>
@@ -260,7 +283,7 @@
                         <constraints>
                             <constraint firstItem="QDh-cX-TP0" firstAttribute="leading" secondItem="UFu-79-5Zd" secondAttribute="leading" id="b0a-7F-ZHx"/>
                             <constraint firstItem="QDh-cX-TP0" firstAttribute="trailing" secondItem="UFu-79-5Zd" secondAttribute="trailing" id="hVB-YI-JZu"/>
-                            <constraint firstItem="QDh-cX-TP0" firstAttribute="bottom" secondItem="UFu-79-5Zd" secondAttribute="bottom" id="ivU-C2-kgS"/>
+                            <constraint firstItem="QDh-cX-TP0" firstAttribute="bottom" secondItem="eMx-J2-u7O" secondAttribute="bottom" id="ivU-C2-kgS"/>
                             <constraint firstItem="QDh-cX-TP0" firstAttribute="top" secondItem="UFu-79-5Zd" secondAttribute="top" id="m4z-1h-APw"/>
                             <constraint firstItem="QDh-cX-TP0" firstAttribute="top" secondItem="UFu-79-5Zd" secondAttribute="top" id="uPL-yr-bKG"/>
                         </constraints>
@@ -287,21 +310,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1eY-F3-267" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1121.7391304347827" y="118.52678571428571"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="FBG-kp-faR">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="C3f-bD-elV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <viewController id="58n-cR-O8X" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="3aX-QU-LuL">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="GLB-Dw-WPZ"/>
-                    </view>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="534" y="-638"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="voN-Y5-fUJ">
