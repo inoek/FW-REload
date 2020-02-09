@@ -71,9 +71,20 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         } else {
             place = places[indexPath.row]
         }
-        cell.nameLabel.text = place.name
-        cell.locationLabel.text = place.location
-        cell.typeLabel.text = place.type
+        cell.nameLabel.text = "Название:   " + place.name
+        
+        if place.location != "" {
+       cell.locationLabel.text = "Адрес:   " + place.location!
+        } else {
+            cell.locationLabel.text = ""
+        }
+        
+        if place.type != "" {
+        cell.typeLabel.text = "Тип:   " + place.type!
+        } else {
+            cell.typeLabel.text = ""
+        }
+        
         cell.imageOfPlaces.image = UIImage(data: place.imageData!)
         
         

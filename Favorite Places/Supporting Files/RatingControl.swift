@@ -94,8 +94,8 @@ import UIKit
             //задаём изображения для кнопок
             
             button.setImage(emptyStar, for: .normal)
-            button.setImage(justStar, for: .selected)
-            button.setImage(justStar, for: .highlighted)
+            button.setImage(fullStar, for: .selected)
+            button.setImage(fullStar, for: .highlighted)
            // button.setImage(fullStar, for: .selected)
             
             //constraints

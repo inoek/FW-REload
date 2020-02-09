@@ -29,7 +29,22 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="269"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpS-rf-o9R">
+                                                    <rect key="frame" x="348" y="225" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="87t-MN-yOk"/>
+                                                        <constraint firstAttribute="width" constant="50" id="V2t-w3-VrE"/>
+                                                    </constraints>
+                                                    <state key="normal" image="map" catalog="system"/>
+                                                    <connections>
+                                                        <segue destination="IDd-xb-aSK" kind="presentation" identifier="showMap" modalPresentationStyle="fullScreen" id="2uk-NI-wFS"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="mpS-rf-o9R" secondAttribute="bottom" constant="5" id="3uJ-qs-a6S"/>
+                                                <constraint firstAttribute="trailing" secondItem="mpS-rf-o9R" secondAttribute="trailing" constant="16" id="T0l-J1-Ptp"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="75" id="34x-gv-Rqc">
@@ -128,7 +143,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sqM-E6-7Ke" customClass="RatingControl" customModule="Favorite_Places" customModuleProvider="target">
+                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sqM-E6-7Ke" customClass="RatingControl" customModule="Favorite_Places" customModuleProvider="target">
                                                     <rect key="frame" x="77" y="48" width="260" height="44"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="starCount">
@@ -176,6 +191,45 @@
                 <exit id="zYT-UJ-ndz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2868.115942028986" y="90.401785714285708"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="IYV-NU-rOH">
+            <objects>
+                <viewController id="IDd-xb-aSK" customClass="MapViewController" customModule="Favorite_Places" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ite-jJ-7tC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="WNi-aC-mdt">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="876"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2zN-vt-H7N">
+                                <rect key="frame" x="351" y="84" width="23" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="23" id="9me-2W-Lk8"/>
+                                    <constraint firstAttribute="height" constant="22" id="vkE-I2-LF6"/>
+                                </constraints>
+                                <state key="normal" image="xmark.seal.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="closeVC:" destination="IDd-xb-aSK" eventType="touchUpInside" id="9ju-An-Lp0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="2zN-vt-H7N" firstAttribute="top" secondItem="Erv-2T-IYf" secondAttribute="top" constant="40" id="BFP-Im-R24"/>
+                            <constraint firstItem="Erv-2T-IYf" firstAttribute="trailing" secondItem="2zN-vt-H7N" secondAttribute="trailing" constant="40" id="Shf-Js-1L1"/>
+                            <constraint firstItem="WNi-aC-mdt" firstAttribute="trailing" secondItem="Erv-2T-IYf" secondAttribute="trailing" id="Um0-C0-IKt"/>
+                            <constraint firstItem="WNi-aC-mdt" firstAttribute="top" secondItem="ite-jJ-7tC" secondAttribute="top" id="WVN-UQ-fsm"/>
+                            <constraint firstAttribute="bottom" secondItem="WNi-aC-mdt" secondAttribute="bottom" constant="20" symbolic="YES" id="dmK-Bj-OOO"/>
+                            <constraint firstItem="WNi-aC-mdt" firstAttribute="leading" secondItem="Erv-2T-IYf" secondAttribute="leading" id="v9m-OX-mce"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Erv-2T-IYf"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pmg-7A-c5i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3947.826086956522" y="115.84821428571428"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ReS-hJ-mgL">
@@ -330,6 +384,8 @@
     </scenes>
     <resources>
         <image name="AZ" width="25" height="24"/>
+        <image name="map" catalog="system" width="64" height="56"/>
+        <image name="xmark.seal.fill" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="5Bf-5E-yZ3"/>
