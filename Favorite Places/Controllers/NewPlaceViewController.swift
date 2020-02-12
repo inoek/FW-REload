@@ -13,7 +13,8 @@ class NewPlaceViewController: UITableViewController {
     var imageIsChanged = false
     var currentPlace: Place!
     
-
+    let mapSegue = "showCurrentPlace"
+    
     
     @IBOutlet var placeImage: UIImageView!
     @IBOutlet var placeName: UITextField!
@@ -71,15 +72,33 @@ class NewPlaceViewController: UITableViewController {
             view.endEditing(true)//скрываем клавиатуру
         }
     }
-                func savePlace() {
+    
+    //MARK: Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        guard let identifier = segue.identifier,
+            let mapVC = segue.destination as? MapViewController
+            else {return}
         
-        var image: UIImage?
-        if imageIsChanged {
-            image = placeImage.image
-        } else {
-            image = #imageLiteral(resourceName: "imagePlaceholder")
+        mapVC.currentSegueIdentifier = identifier
+        
+        if identifier == "showCurrentPlace" {
+            
+            mapVC.place.name = placeName.text!
+            mapVC.place.location = placeLocation.text
+            mapVC.place.type = placeType.text
+            mapVC.place.imageData = placeImage.image?.pngData()
         }
+
+    }
+    
+    
+    func savePlace() {
+        
+        
+        let image = imageIsChanged ? placeImage.image : #imageLiteral(resourceName: "imagePlaceholder")
+
+      
         let imageData = image?.pngData()//конвентируем image to imageData
         let newPlace = Place(name: placeName.text!,
                              location: placeLocation.text,
@@ -98,34 +117,7 @@ class NewPlaceViewController: UITableViewController {
             StorageManager.saveObject(newPlace)
         }
     }
-    //    func saveNewPlace() {
-    //
-    //        var image: UIImage?
-    //
-    //        if imageIsChanged {
-    //            image = placeImage.image
-    //        } else {
-    //            image = #imageLiteral(resourceName: "imagePlaceholder")
-    //        }
-    //
-    //        let imageData = image?.pngData()
-    //
-    //        let newPlace = Place(name: placeName.text!,
-    //                             location: placeLocation.text,
-    //                             type: placeType.text,
-    //                             imageData: imageData)
-    //
-    //        if currentPlace != nil {
-    //            try! realm.write {
-    //                currentPlace?.name = newPlace.name
-    //                currentPlace?.location = newPlace.location
-    //                currentPlace?.type = newPlace.type
-    //                currentPlace?.imageData = newPlace.imageData
-    //            }
-    //        } else {
-    //            StorageManager.saveObject(newPlace)
-    //        }
-    //    }
+    
     private func setupEditScreen() {
         
         
