@@ -297,7 +297,7 @@
                         <viewLayoutGuide key="safeArea" id="Erv-2T-IYf"/>
                     </view>
                     <connections>
-                        <outlet property="currentAdress" destination="MRg-dJ-wy5" id="5x0-za-Mki"/>
+                        <outlet property="currentAddress" destination="MRg-dJ-wy5" id="5x0-za-Mki"/>
                         <outlet property="doneButton" destination="l7j-pa-OAe" id="Mdj-Fp-NMt"/>
                         <outlet property="mapPinImage" destination="qPB-6w-cX3" id="9qp-gJ-MLO"/>
                         <outlet property="mapView" destination="WNi-aC-mdt" id="fRg-76-LtU"/>

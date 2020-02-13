@@ -10,8 +10,16 @@ import UIKit
 import MapKit
 import CoreLocation
 
+ protocol MapViewControllerDelegate {
+   //@objc to protocol; @objc optional to body
+   func getAdress(_ adress: String?) //оциональная функция
+    
+    
+}
+
 class MapViewController: UIViewController {
     
+    var mapViewControllerDelegate: MapViewControllerDelegate?
     var place = Place()//инициализируем значения по-умолчанию
     let annotationIdentifier = "annotationIdentifier"
     let locationManager = CLLocationManager()
@@ -20,13 +28,13 @@ class MapViewController: UIViewController {
     
     @IBOutlet var mapPinImage: UIImageView!
     @IBOutlet var mapView: MKMapView!
-    @IBOutlet var currentAdress: UILabel!
+    @IBOutlet var currentAddress: UILabel!
     @IBOutlet var doneButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //mapView.delegate = self
-        
+        currentAddress.text = ""
         setupMapView()
         checkLocationServices()
         // Do any additional setup after loading the view.
@@ -44,6 +52,9 @@ class MapViewController: UIViewController {
     }
     
     @IBAction func doneButtonPressed() {
+        
+        mapViewControllerDelegate?.getAdress(currentAddress.text)//при нажатии на кнопку done передаём адрес в label. затем закрываем контроллер?
+        dismiss(animated: true)
     }
     
     private func setupMapView() {
@@ -51,7 +62,7 @@ class MapViewController: UIViewController {
         if currentSegueIdentifier == "showCurrentPlace" {
             setupPlaceMark()
             mapPinImage.isHidden = true
-            currentAdress.isHidden = true
+            currentAddress.isHidden = true
             doneButton.isHidden = true
         }
     }
@@ -107,7 +118,7 @@ class MapViewController: UIViewController {
         switch CLLocationManager.authorizationStatus() {
         case .authorizedWhenInUse://когда используется геолокация
             mapView.showsUserLocation = true
-            if currentSegueIdentifier == "getAdress" { showUserLocation() }
+            if currentSegueIdentifier == "getAddress" { showUserLocation() }
             break
         case .denied://отказано в доступе к геолокации
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
@@ -137,6 +148,16 @@ class MapViewController: UIViewController {
             mapView.setRegion(region, animated: true)
         }
     }
+    
+    private func getCenterLocation(for mapView: MKMapView) -> CLLocation {//возвращаем координаты точки, находящейся по центру экрана
+        
+        let latitude = mapView.centerCoordinate.latitude//широта
+        let longtitude = mapView.centerCoordinate.longitude//долгота
+        
+        return CLLocation(latitude: latitude, longitude: longtitude)
+    }
+    
+    
     
     private func showAlert(title: String, message: String) {
         
@@ -173,6 +194,39 @@ extension MapViewController: MKMapViewDelegate {
         }
         
         return annotaionView
+    }
+    
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {//оторбражается при смене отображаемого региона
+        
+        let center = getCenterLocation(for: mapView)
+        let geocoder = CLGeocoder()//преобразовывает координаты в адрес и наоборот
+        
+        geocoder.reverseGeocodeLocation(center) { (placemarks, error) in
+            
+            if let error = error {
+                
+                print(error)
+                return
+            }
+            
+            guard let placemarks = placemarks else {return}
+            
+            let placemark = placemarks.first//извлекаем первый элемент из массива
+            let streetName = placemark?.thoroughfare
+            let builtNumber = placemark?.subThoroughfare
+            
+            DispatchQueue.main.async {
+                if streetName != nil && builtNumber != nil {
+                    self.currentAddress.text = "\(streetName!), \(builtNumber!)"
+                } else if streetName != nil {
+                    self.currentAddress.text = "\(streetName!)"
+                } else{
+                    self.currentAddress.text = ""
+                }
+                
+            }
+            
+        }
     }
 }
 
