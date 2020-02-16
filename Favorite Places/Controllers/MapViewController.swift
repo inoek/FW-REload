@@ -26,16 +26,27 @@ class MapViewController: UIViewController {
     let mashtab = 1_000.00
     var currentSegueIdentifier = ""
     var placeCoordinate: CLLocationCoordinate2D?
+    var directionsArrays: [MKDirections] = []
+    var previousLocation: CLLocation? {
+        didSet {
+            startCheckngUserlocation()//вызываем свойство в случае вызова метода
+        }
+    }
+    
     
     @IBOutlet var mapPinImage: UIImageView!
     @IBOutlet var mapView: MKMapView!
     @IBOutlet var currentAddress: UILabel!
     @IBOutlet var doneButton: UIButton!
     @IBOutlet var directionButton: UIButton!
+    @IBOutlet var timeOnTheRoad: UILabel!
+    @IBOutlet var distanceOnTheRoad: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //mapView.delegate = self
+        timeOnTheRoad.isHidden = true
+        distanceOnTheRoad.isHidden = true
         currentAddress.text = ""
         setupMapView()
         checkLocationServices()
@@ -75,6 +86,17 @@ class MapViewController: UIViewController {
             directionButton.isHidden = false
         }
     }
+    
+    
+    private func resetMapView(withNew directions: MKDirections) {
+        
+        mapView.removeOverlays(mapView.overlays)//удаляем все текущие маршруты
+        directionsArrays.append(directions)//массив маршрутов из параметра данного метода
+        let _ = directionsArrays.map {$0.cancel()}//отменяем маршруты во всех элементах массива
+        directionsArrays.removeAll()
+    }
+    
+    
     private func setupPlaceMark() {
         
         guard let location = place.location else {return}
@@ -159,6 +181,19 @@ class MapViewController: UIViewController {
         }
     }
     
+    private func startCheckngUserlocation() {
+        
+        guard let previousLocation = previousLocation else {return}
+        let center = getCenterLocation(for: mapView)
+        guard center.distance(from: previousLocation) > 20 else { return }//если расстояние между новой точкой и старой больше 20 метров, то обновляем старую точку
+        self.previousLocation = center
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.showUserLocation()
+
+        }
+    }
+    
+    
     private func getDirecrion() {
         
         guard  let location = locationManager.location?.coordinate else {//извлекаем локацию пользователя
@@ -166,6 +201,9 @@ class MapViewController: UIViewController {
             return
             
         }
+        //после определения текущего местоположения пользователя включаем постоянное отслеживание положения пользователя
+        locationManager.startUpdatingLocation()
+        previousLocation = CLLocation(latitude: location.latitude, longitude: location.longitude)//запоминаем предыдущую локацию пользователя
         
         guard let request = createDirectionRequest(from: location) else {
             
@@ -174,6 +212,9 @@ class MapViewController: UIViewController {
         }
         
         let direction = MKDirections(request: request)
+        
+        resetMapView(withNew: direction)//избавляемся от старых маршрутов
+        
         direction.calculate { (response, error) in//расчитанные данные
             
             if let error = error {
@@ -193,10 +234,14 @@ class MapViewController: UIViewController {
                 self.mapView.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)//отображение всего маршрута на карте (относительно геометрии маршрута)
                 
                 let distance = String(format: "%.1f", route.distance / 1000 )//округляем до десятков и переводим в километры
-                let timeInRoad = route.expectedTravelTime//время в пути
+                let timeInRoad = String(format: "%.1f", route.expectedTravelTime / 60 )//время в пути
                 
-                print("Расстояние до места: \(distance) км")
-                print("Время в пути: \(timeInRoad)")
+                self.timeOnTheRoad.isHidden = false
+                self.distanceOnTheRoad.isHidden = false
+                self.distanceOnTheRoad.text = distance + "  км"
+                self.timeOnTheRoad.text = timeInRoad + "  мин"
+//                print("Расстояние до места: \(distance) км")
+//                print("Время в пути: \(timeInRoad)")
             }
         }
         
@@ -213,7 +258,7 @@ class MapViewController: UIViewController {
             
             request.source = MKMapItem(placemark: startingLocation)//указываем стартовую точку
             request.destination = MKMapItem(placemark: destination)//и конечную
-            request.transportType = .automobile//выбираем тип транспорта
+            request.transportType = .any//выбираем тип транспорта
             request.requestsAlternateRoutes = true//можно строить альтернативные маршурты, если они доступны
             return request
     }
@@ -269,6 +314,16 @@ extension MapViewController: MKMapViewDelegate {
         
         let center = getCenterLocation(for: mapView)
         let geocoder = CLGeocoder()//преобразовывает координаты в адрес и наоборот
+        
+        if currentSegueIdentifier == "showCurrentPlace" && previousLocation != nil {
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                
+                self.showUserLocation()
+            }
+        }
+        
+        geocoder.cancelGeocode()//отмена запроса
         
         geocoder.reverseGeocodeLocation(center) { (placemarks, error) in
             
