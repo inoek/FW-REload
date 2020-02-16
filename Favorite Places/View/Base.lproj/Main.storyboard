@@ -12,9 +12,9 @@
             <objects>
                 <tableViewController id="hOx-w8-mKb" customClass="NewPlaceViewController" customModule="Favorite_Places" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0m0-Md-gCL">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.80000000000000004" green="1" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <sections>
                             <tableViewSection id="ejN-N9-vAD">
@@ -36,7 +36,7 @@
                                                         <constraint firstAttribute="height" constant="50" id="87t-MN-yOk"/>
                                                         <constraint firstAttribute="width" constant="50" id="V2t-w3-VrE"/>
                                                     </constraints>
-                                                    <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="tintColor" red="0.0034963393119999998" green="0.46997195479999998" blue="0.25879105930000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <state key="normal" image="map" catalog="system"/>
                                                     <connections>
                                                         <segue destination="IDd-xb-aSK" kind="presentation" identifier="showCurrentPlace" modalPresentationStyle="fullScreen" id="2uk-NI-wFS"/>
@@ -48,6 +48,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="mpS-rf-o9R" secondAttribute="trailing" constant="16" id="T0l-J1-Ptp"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.80000000000000004" green="1" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="75" id="34x-gv-Rqc">
                                         <rect key="frame" x="0.0" y="308" width="414" height="75"/>
@@ -61,6 +62,7 @@
                                                     <subviews>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Название" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="abH-o7-fEA">
                                                             <rect key="frame" x="0.0" y="0.0" width="394" height="45"/>
+                                                            <color key="backgroundColor" red="0.80000000000000004" green="1" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                                             <connections>
@@ -77,6 +79,7 @@
                                                 <constraint firstItem="MgO-Fc-KTJ" firstAttribute="leading" secondItem="s8y-B9-Otk" secondAttribute="leading" constant="10" id="vSb-YN-5Jr"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.80000000000000004" green="1" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="75" id="Mrj-ZD-ugV">
                                         <rect key="frame" x="0.0" y="383" width="414" height="75"/>
@@ -90,6 +93,7 @@
                                                     <subviews>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Локация" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L3R-vg-hA6">
                                                             <rect key="frame" x="0.0" y="0.0" width="354" height="45"/>
+                                                            <color key="backgroundColor" red="0.80000000000000004" green="1" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                                             <connections>
@@ -121,6 +125,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="t8B-av-3sv" secondAttribute="bottom" constant="15" id="qoE-kp-4f3"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.80000000000000004" green="1" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="75" id="PZX-W7-wB1">
                                         <rect key="frame" x="0.0" y="458" width="414" height="75"/>
@@ -134,6 +139,7 @@
                                                     <subviews>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Тип" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UE9-YF-jlF">
                                                             <rect key="frame" x="0.0" y="0.0" width="394" height="45"/>
+                                                            <color key="backgroundColor" red="0.80000000000000004" green="1" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                                             <connections>
@@ -150,6 +156,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="9VT-o1-cYM" secondAttribute="trailing" constant="10" id="l3a-4r-K65"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.80000000000000004" green="1" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="140" id="wnk-Zx-eoF">
                                         <rect key="frame" x="0.0" y="533" width="414" height="140"/>
@@ -168,6 +175,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </stackView>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.80000000000000004" green="1" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstItem="sqM-E6-7Ke" firstAttribute="centerY" secondItem="Lah-ds-SM5" secondAttribute="centerY" id="5sO-rD-9ud"/>
                                                 <constraint firstItem="sqM-E6-7Ke" firstAttribute="centerX" secondItem="Lah-ds-SM5" secondAttribute="centerX" id="m8l-Ze-kES"/>
@@ -238,7 +246,7 @@
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mappin.and.ellipse" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="qPB-6w-cX3">
                                 <rect key="frame" x="187" y="417.5" width="40" height="40.5"/>
-                                <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.0034963393119999998" green="0.46997195479999998" blue="0.25879105930000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="BJu-aR-NqH"/>
                                     <constraint firstAttribute="width" constant="40" id="S2K-Xx-wfp"/>
@@ -266,12 +274,24 @@
                                     <constraint firstAttribute="height" constant="34" id="QXw-qw-xJQ"/>
                                     <constraint firstAttribute="width" constant="70" id="skZ-CE-bAb"/>
                                 </constraints>
-                                <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.0" green="0.40000000000000002" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" image="location.fill" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="heavy"/>
                                 </state>
                                 <connections>
                                     <action selector="lookingUserAtTheMap" destination="IDd-xb-aSK" eventType="touchUpInside" id="8Xy-lb-Jnr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Msx-sy-xkU">
+                                <rect key="frame" x="177" y="768" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="2fm-pr-hfi"/>
+                                    <constraint firstAttribute="height" constant="60" id="3Bm-wj-S7g"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="mappin.circle.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="directionButtonPressed" destination="IDd-xb-aSK" eventType="touchUpInside" id="CLo-Kt-6SL"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -281,6 +301,7 @@
                             <constraint firstItem="MRg-dJ-wy5" firstAttribute="leading" secondItem="Erv-2T-IYf" secondAttribute="leading" constant="20" id="6GP-7r-5kE"/>
                             <constraint firstItem="qPB-6w-cX3" firstAttribute="centerY" secondItem="ite-jJ-7tC" secondAttribute="centerY" constant="-10" id="6mF-34-tSn"/>
                             <constraint firstItem="qPB-6w-cX3" firstAttribute="centerX" secondItem="ite-jJ-7tC" secondAttribute="centerX" id="75S-fr-y5v"/>
+                            <constraint firstItem="Msx-sy-xkU" firstAttribute="centerX" secondItem="ite-jJ-7tC" secondAttribute="centerX" id="7fb-97-Y5e"/>
                             <constraint firstItem="Erv-2T-IYf" firstAttribute="bottom" secondItem="LiU-xM-0Up" secondAttribute="bottom" constant="102" id="9nP-rq-DTZ"/>
                             <constraint firstItem="2zN-vt-H7N" firstAttribute="top" secondItem="Erv-2T-IYf" secondAttribute="top" constant="40" id="BFP-Im-R24"/>
                             <constraint firstItem="Erv-2T-IYf" firstAttribute="trailing" secondItem="LiU-xM-0Up" secondAttribute="trailing" constant="40" id="Mg3-Zn-uAk"/>
@@ -288,6 +309,7 @@
                             <constraint firstItem="Erv-2T-IYf" firstAttribute="trailing" secondItem="2zN-vt-H7N" secondAttribute="trailing" constant="40" id="Shf-Js-1L1"/>
                             <constraint firstItem="l7j-pa-OAe" firstAttribute="centerX" secondItem="ite-jJ-7tC" secondAttribute="centerX" id="TQV-wE-fgK"/>
                             <constraint firstItem="WNi-aC-mdt" firstAttribute="trailing" secondItem="Erv-2T-IYf" secondAttribute="trailing" id="Um0-C0-IKt"/>
+                            <constraint firstItem="Erv-2T-IYf" firstAttribute="bottom" secondItem="Msx-sy-xkU" secondAttribute="bottom" constant="34" id="Vg8-KQ-gRU"/>
                             <constraint firstItem="WNi-aC-mdt" firstAttribute="top" secondItem="ite-jJ-7tC" secondAttribute="top" id="WVN-UQ-fsm"/>
                             <constraint firstAttribute="bottom" secondItem="WNi-aC-mdt" secondAttribute="bottom" id="dmK-Bj-OOO"/>
                             <constraint firstItem="WNi-aC-mdt" firstAttribute="leading" secondItem="Erv-2T-IYf" secondAttribute="leading" id="v9m-OX-mce"/>
@@ -298,6 +320,7 @@
                     </view>
                     <connections>
                         <outlet property="currentAddress" destination="MRg-dJ-wy5" id="5x0-za-Mki"/>
+                        <outlet property="directionButton" destination="Msx-sy-xkU" id="p74-Yd-O9S"/>
                         <outlet property="doneButton" destination="l7j-pa-OAe" id="Mdj-Fp-NMt"/>
                         <outlet property="mapPinImage" destination="qPB-6w-cX3" id="9qp-gJ-MLO"/>
                         <outlet property="mapView" destination="WNi-aC-mdt" id="fRg-76-LtU"/>
@@ -314,6 +337,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QiD-4g-zVQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.80000000000000004" green="1" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="hOx-w8-mKb" kind="relationship" relationship="rootViewController" id="6Ox-f0-kxa"/>
@@ -333,16 +357,16 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QDh-cX-TP0">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" red="0.80000000000000004" green="1" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <segmentedControl key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="o6D-RV-TXv">
+                                <segmentedControl key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" id="o6D-RV-TXv">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="32"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <segments>
                                         <segment title="Дата"/>
                                         <segment title="Имя"/>
                                     </segments>
-                                    <color key="selectedSegmentTintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="selectedSegmentTintColor" red="0.0034963393119999998" green="0.46997195479999998" blue="0.25879105930000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <connections>
                                         <action selector="sortSelection:" destination="plO-KV-zdd" eventType="valueChanged" id="cbd-y0-QlI"/>
                                     </connections>
@@ -410,7 +434,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.80000000000000004" green="1" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="QDh-cX-TP0" firstAttribute="leading" secondItem="UFu-79-5Zd" secondAttribute="leading" id="b0a-7F-ZHx"/>
                             <constraint firstItem="QDh-cX-TP0" firstAttribute="trailing" secondItem="UFu-79-5Zd" secondAttribute="trailing" id="hVB-YI-JZu"/>
@@ -451,6 +475,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ewj-1R-KuL">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.80000000000000004" green="1" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="plO-KV-zdd" kind="relationship" relationship="rootViewController" id="Quo-xy-to9"/>
@@ -466,11 +491,12 @@
         <image name="location.fill" catalog="system" width="64" height="56"/>
         <image name="map" catalog="system" width="64" height="56"/>
         <image name="mappin.and.ellipse" catalog="system" width="58" height="64"/>
+        <image name="mappin.circle.fill" catalog="system" width="64" height="60"/>
         <image name="navigationIcon" width="15.5" height="33.5"/>
         <image name="xmark.seal.fill" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2uk-NI-wFS"/>
-        <segue reference="5Bf-5E-yZ3"/>
+        <segue reference="H05-1w-yQn"/>
+        <segue reference="6Ox-f0-kxa"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -66,6 +66,9 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         //let place = places[indexPath.row] //ссылка на массив
         var place = Place()
         
+        cell.backgroundColor = .clear
+    
+        
         if isFiltering {
             place = filteredPLaces[indexPath.row]
         } else {
