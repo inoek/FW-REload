@@ -317,7 +317,7 @@ extension MapViewController: MKMapViewDelegate {
         
         if currentSegueIdentifier == "showCurrentPlace" && previousLocation != nil {
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 15) {
                 
                 self.showUserLocation()
             }
