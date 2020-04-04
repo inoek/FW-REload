@@ -83,7 +83,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         
         if place.type != "" {
-        cell.typeLabel.text = "Тип:   " + place.type!
+        cell.typeLabel.text = "Описание:   " + place.type!
         } else {
             cell.typeLabel.text = ""
         }

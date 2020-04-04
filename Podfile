@@ -3,8 +3,9 @@
 
 target 'Favorite Places' do
   # Comment the next line if you don't want to use dynamic frameworks
-  use_modular_headers!
+  use_frameworks!
 
-  pod 'RealmSwift'
+  # Pods for Favorite Places
+	pod 'RealmSwift'
 
 end

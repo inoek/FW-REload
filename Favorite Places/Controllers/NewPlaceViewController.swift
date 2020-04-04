@@ -80,7 +80,7 @@ class NewPlaceViewController: UITableViewController {
             let mapVC = segue.destination as? MapViewController
             else {return}
         
-        mapVC.currentSegueIdentifier = identifier
+        mapVC.incomeSegueIdentifier = identifier
         mapVC.mapViewControllerDelegate = self
         if identifier == "showCurrentPlace" {
             
