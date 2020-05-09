@@ -46,7 +46,6 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         searchController.searchBar.placeholder = "Поиск"
         navigationItem.searchController = searchController //интегрируем поиск в navigation bar
         definesPresentationContext = true //отпускаем строку поиска при переходе на другой экран
-        
     }
     
     //     MARK: - Table view data source
@@ -67,8 +66,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         var place = Place()
         
         cell.backgroundColor = .clear
-    
-        
+                
         if isFiltering {
             place = filteredPLaces[indexPath.row]
         } else {
@@ -83,9 +81,9 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         
         if place.type != "" {
-        cell.typeLabel.text = "Описание:   " + place.type!
+        cell.definisionLabel.text = "Описание:   " + place.type!
         } else {
-            cell.typeLabel.text = ""
+            cell.definisionLabel.text = ""
         }
         
         cell.imageOfPlaces.image = UIImage(data: place.imageData!)
@@ -181,6 +179,7 @@ extension MainViewController: UISearchResultsUpdating {
         filterContentForSearchText(searchController.searchBar.text!)
         
     }
+    
     private func filterContentForSearchText(_ searchText: String) {
         
         filteredPLaces = places.filter("name CONTAINS[c] %@ OR location CONTAINS[c] %@", searchText, searchText )

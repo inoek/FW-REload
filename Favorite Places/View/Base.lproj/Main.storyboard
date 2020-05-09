@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="b6s-Ce-1OG">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,7 +31,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpS-rf-o9R">
-                                                    <rect key="frame" x="348" y="225" width="50" height="50"/>
+                                                    <rect key="frame" x="534" y="225" width="50" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="87t-MN-yOk"/>
                                                         <constraint firstAttribute="width" constant="50" id="V2t-w3-VrE"/>
@@ -58,10 +58,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MgO-Fc-KTJ">
-                                                    <rect key="frame" x="10" y="15" width="394" height="45"/>
+                                                    <rect key="frame" x="10" y="15" width="580" height="45"/>
                                                     <subviews>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Название" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="abH-o7-fEA">
-                                                            <rect key="frame" x="0.0" y="0.0" width="394" height="45"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="580" height="45"/>
                                                             <color key="backgroundColor" red="0.65885561699999995" green="0.83456677199999996" blue="0.66272825000000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
@@ -89,10 +89,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="t8B-av-3sv">
-                                                    <rect key="frame" x="10" y="15" width="354" height="45"/>
+                                                    <rect key="frame" x="10" y="15" width="540" height="45"/>
                                                     <subviews>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Локация" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L3R-vg-hA6">
-                                                            <rect key="frame" x="0.0" y="0.0" width="354" height="45"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="540" height="45"/>
                                                             <color key="backgroundColor" red="0.65885561699999995" green="0.83456677199999996" blue="0.66272825000000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
@@ -103,7 +103,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTy-Zw-9or">
-                                                    <rect key="frame" x="372" y="32" width="22" height="22"/>
+                                                    <rect key="frame" x="558" y="32" width="22" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="22" id="FW4-PR-jPq"/>
                                                         <constraint firstAttribute="height" constant="22" id="cAw-d3-RhL"/>
@@ -135,10 +135,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9VT-o1-cYM">
-                                                    <rect key="frame" x="10" y="15" width="394" height="120"/>
+                                                    <rect key="frame" x="10" y="15" width="580" height="120"/>
                                                     <subviews>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" placeholder="Мои впечатления о месте" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UE9-YF-jlF">
-                                                            <rect key="frame" x="0.0" y="0.0" width="394" height="120"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="580" height="120"/>
                                                             <color key="backgroundColor" red="0.65885561699999995" green="0.83456677199999996" blue="0.66272825000000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
@@ -165,7 +165,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sqM-E6-7Ke" customClass="RatingControl" customModule="Favorite_Places" customModuleProvider="target">
+                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sqM-E6-7Ke" customClass="RatingControl" customModule="Favorite_Places" customModuleProvider="target">
                                                     <rect key="frame" x="77" y="48" width="260" height="44"/>
                                                     <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <userDefinedRuntimeAttributes>
@@ -446,10 +446,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="definisionLabel" destination="swN-gj-o19" id="ITb-rZ-nYt"/>
                                             <outlet property="imageOfPlaces" destination="379-cZ-hHD" id="jVC-Bm-j7b"/>
                                             <outlet property="locationLabel" destination="yTZ-Uj-Adz" id="PLl-uq-Kpc"/>
                                             <outlet property="nameLabel" destination="Cef-Hl-tsD" id="dhy-Jv-ACr"/>
-                                            <outlet property="typeLabel" destination="swN-gj-o19" id="ITb-rZ-nYt"/>
                                             <segue destination="hOx-w8-mKb" kind="show" identifier="showDetail" id="5Bf-5E-yZ3"/>
                                         </connections>
                                     </tableViewCell>
